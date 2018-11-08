@@ -1,0 +1,38 @@
+https://www.youtube.com/watch?v=6TI-gQhsf40
+
+Machine Learning in Production is fun
+-> Lots of fundamental problems to tackle
+-> Blend of statistics, applied ML, and software engineering
+
+What is Production?
+-> Sharing your predictions with everyone
+-> Measuring quality of predictions over time
+-> Improving Prediction quality with feedback
+
+Four key parts of Production
+-> Deployment: Process of making predictions available to everyone
+-> Evaluation: Measuring the quality of deployed models
+-> Management: Tracking model quality over time
+-> Monitoring: Improved deployed models with feedback
+
+Deployment
+Often the major challenge in deploying a machine learning model is that Data Scientists and Depoloyment Engineers do not speak the same language (former speaking R/Python and latter speaking Java). One major way to get around with it is via a REST API
+
+Evaluation
+Is basically a collection of how you measure the performance of your predictions. Your model evaluation metric need not be same as your business metric. You should check if they correlate
+
+Offline Evaluation: Generally happens both on business and model metric
+Online Evaluation: Happens usually on business metric (often data required for model metric is not present)
+
+
+Monitoring and Management
+Make sure your system has an alert system when the pattern of your data has changed
+
+How to update?
+-> A/B Testing
+To check which model is better. Deploy both on different users and choose best ones. THERE ARE LOTS OF WAYS YOU COULD GO WRONG. Be careful!
+-> Multi-armed bandits: 10% of time you spend on Exploration and 90% of time you spend on Exploitation. Useful to cut your losses. Lots of algorithms for Multi-Armbed Bandits
+
+MAB vs A/B
+MAB: (i) "Set and Forget" approach for continious optimization (ii) Minimize your losses (iii) Good MAB algorithm converges very quickly
+A/B: (i) Easy and quick to set up (ii) Answers relevant business questions (iii) Sometimes, it could take a while before you obersve the results
