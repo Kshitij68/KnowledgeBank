@@ -1,0 +1,29 @@
+https://www.tutorialspoint.com/elasticsearch
+
+ElasticSearch is:
+(i) Real Time Distributed
+(ii) Open Source
+(iii) Full-Text Search and Analytics
+(iv) Used in Single Page Application (SPA) Projects
+(v) Developed in Java (helping it run at high speeds)
+(vi) Uses schema less JSON documents to store data
+
+Pre-requisities: Basic understanding of Java, JSON, search engines and web techologies. Interaction of ElasticSearch is through RESTful API, therefore it is always recommended to have knowledge of RESTful API
+
+Some features of ElasticSearch are:
+(i) Scalable up to petabytes of structured and unstructured data
+(ii) Can be used as a replacement of document stores like MongoDB and RavenDB
+(iii) Uses denormalization to improve search performance
+
+Some key concepts of ElasticSearch are:
+(i) Node: Refers to single running instance of ElasticSearch
+(ii) Cluster: Collection of one or more nodes
+(iii) Index: Collection of different types of documents and the properties
+(iv) <READ AGAIN>
+
+Advantages of ElasticSearch
+(i) Developed in Java, making it compatible to every platform
+(ii) Almost Real Time
+(iii) Distributed, which makes it easy to scale and integrate
+(iv) Creates full backups by using the concept of gateway
+(v) 

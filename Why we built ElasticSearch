@@ -1,0 +1,21 @@
+https://www.youtube.com/watch?v=fEsmydn747c
+
+The talk is given by Shay Banon, creator of ElasticSearch
+
+BigData - Something that crashes Excel
+
+A single tweet is composed of tons of information containing lot of metadeta like username, followers, hastags, location etc.
+
+Can help in getting the analytics from the data
+
+We want to be able to triagulate the data that we have:
+(i) text (ii) meta-deta (iii) analytics
+
+We want data to be refresh the data very fast! Elasticsearch is amazing for that
+
+You do need to have enough hardware to support the data
+
+There is a very simple rule when it comes to distributed systems: Collocation. 
+Collocation ensures that we can achieve (i) freshness of data (ii) Ask and answer data in milliseconds
+
+You should have a system that can do all the three tasks required for triangulation
