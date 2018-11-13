@@ -1,0 +1,101 @@
+https://www.youtube.com/watch?v=39vJRxIPSxw
+
+Github Link: https://github.com/dvysardana/RecommenderSystems_PyData_2016
+
+Why Recommendar Systems?
+In a traditional bookstore, the popular books are listed in the center/front. However, when we have a huge set of products online.
+
+This leads to 'Long Tail Phenomenon' where a small set of products which we find in both retail and online. Others are present only online.
+We need to a system that tells us which are the relevant items (instead of bombarding the users with huge amount of choices)
+
+Examples
+-> Linkdein Job Recommendations
+-> Netflix Movie/Tv Series recommendations
+-> Amazon Product Recommendations
+
+Naive Understanding of Recommendar Systems
+-> Set of users and items
+-> The users might be related to each other
+-> The items might be related to each other
+-> There is a mapping between users and items
+
+Solution 0
+Popularity Based Recommendar System
+-> Calculate Popular Products based on which are bought the most
+-> Basically a rank list of items based on purchase count
+Features
+-> Not a personalized recommendar system
+-> Can use Context
+-> Can use User Features, but may not be useful
+-> Can use item features, but may not be useful
+-> Uses Purchase History
+-> It is scalable
+
+Solution I
+Classification Model
+Input: User Features, Product Features, Purchase History
+Output: Binary Output whether the user will like the item or not
+Features:
+-> Can generated personalized recommendations
+-> Can use Context, user features, item features, purchase history
+-> Not scalable as (i) too many classes (ii) Need to be updated constantly
+
+Solution II
+Nearest Neighbours Collaborative Filtering
+-> User Based Filtering (By observing similarity between users)
+	Find users who have a similar taste in products as the current user.
+	Similarity is based upon similarity in users purchasing behavior
+	"User x is similar to User Y, because they both purchased items A,B and C"
+-> Item/Content Based Filtering (By observing similarity between items/content)
+	Recommend items that are similar to the items the user bought
+	Similarity is based upon co-occurence of purchases
+	"Items A and B were purchased by both users x and y, so they are similar"
+This talk focuses more on Item based Collaborative Filtering
+
+-> We have purchase history database for 3 users ( 3 movies)
+-> We build a co-occurence matrix of dimension number_of_movies * number_of_movies
+-> Value in Matrix[i][j] is number of users who have watched ith row  and jth column movie
+-> For a given movie if we have to get recommendations, we will the counts in descending order. The issue is that it will start to work like a Popularity based recommendar system only
+-> We can normalize based on Popularity. Naive methods include Jaccard Similarity. This means that the M[i][j] == Number of users who have watched ith movie AND jth movie / Number of users who have watched ith movie OR jth movie.
+
+The above example is when ONLY one movie has been watched. 
+But what if the user has watched 2 movies?
+-> We take out both the rows A and D from the normalized co-occurence matrix
+
+Given a user*ItemRatings of size 480,189*17,770 which model will you apply given the matrix is sparse?
+-> Popularity based: Maybe, but there are too many movies. 
+-> Classification based: Not scalable at all
+-> Item based: Cannot make use of Ratings (This is binary)
+-> User Similarity based: Not the best choice
+
+Real life scenarios have the issue of Sparsity (with Almost 99% matrix being sparse)
+
+Solution III
+Model based Collaborative Filtering (Matrix Factorization)
+Identify latent (hidden) features from the input user * Item Ratings to represent the users and items as vectors in N dimensional space
+
+All the users and items can be represented in a N dimensional space
+
+Training: Use Matrix Factorization Approaches (Eg SVD) to split the ratings matrix into constituent user matrix and item matrix with minimum sum of squared error (MSE)
+Goal: Predict Unknown ratings for the remaining set of movies using the learned User Matrix and Item Matrix
+
+Netflix Prize winner algorithm: http://buzzard.ups.edu/courses/2014spring/420projects/math420-UPS-spring-2014-gower-netflix-SVD.pdf
+
+Performance metrics of recommendation systems
+-> Precision: Total number of products relevant and recommended / Total number of items recommended
+	Here precision is a way to measure exactness
+-> Recall: Total number of products relevant and recommended / Total number of relevant items
+	Here recall is a way to measure completeness
+-> We build a Precision (Y)-Recall (X) curve
+-> Mean Absolute Error, Accuracy and ROC Curves are also important metrics
+
+http://jmlr.csail.mit.edu/papers/volume10/gunawardana09a/gunawardana09a.pdf
+
+How to make a recommendar system that can handle new movies
+-> Popularity based: No
+-> Classification: Partially
+-> Nearest Neighbor based CF: No
+-> Matrix Factorization based CF: No
+This problem is called a cold start problem
+
+The rest of the lecture covers running a Jupyter Notebook (see github link on top)
