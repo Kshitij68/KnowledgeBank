@@ -1,0 +1,43 @@
+https://www.youtube.com/watch?v=6QVXPNrSbLU
+
+Martin Daniel, Data Scientist at Airbnb discusssed Airbnb's emphasis on having an experimentation-centric culture. He tells company's approach on scaling from a team of 1 to 100 data scientists
+
+
+They initially built the company on getting feedback from users by calling/meeting them. Last year the company had 150M users.
+
+Have cross-functional team
+Small
+1 Designer
+2 Data Scientists
+1 Researcher
+2 Data Engineers
+1 Product Manager
+
+What do we do? 
+-> Analysis
+-> Experimentaion
+-> Data Products
+
+Case #1: Marginal Return
+I have X$ to increase my supply in Europe. In which markets should I invest?
+B = A*S^y*D^a
+B => Bookings
+A => Matching Efficiency Parameter (How easy it is to convert supply demand to bookings)
+S => Supply
+y => Elasticity of Supply
+D => Demand
+a => Elasticity of Demand
+
+Case #2: Experiments
+We deployed a feature. Bookings increased. 
+We cannot make any such conclusions directly as we do not know about the world without feature
+
+Case #3: Data Products
+Banned Listing can Re-list (from different account)
+June 2016 - Listing A is created
+April 4th 2017 - Listing A is removed from platform
+April 23 2017 - Listing A is created
+Jumeau is created which can identify duplicates
+Works on a feedback mechanism
+
+

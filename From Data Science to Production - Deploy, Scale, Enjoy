@@ -1,0 +1,31 @@
+https://www.youtube.com/watch?v=48WchucU8UY
+
+Sergii Khomenko
+-> Data Scientist
+-> Stylist - Make Style Happen
+
+Agenda
+-> Early days of startups
+-> Software Engineering
+-> Immutable Infrastructure
+-> Serverless Architecture
+
+The Early Days of Startups
+-> You don't focus on reliability
+-> You don't focus on scalability
+Problem Defination:
+-> Many different technologies
+-> Hard to reproduce data science results
+-> Issues with backward compatibility
+-> Dependency hell
+-> Hard to scale products
+-> Hard to on-board new people
+Some tips:
+-> Use Version Control
+-> Cover Code with Tests
+-> Thorough Documentation
+
+Docker
+-> Still have a host machine
+
+

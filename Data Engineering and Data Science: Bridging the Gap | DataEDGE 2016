@@ -1,0 +1,46 @@
+https://www.youtube.com/watch?v=-K9SjrWpeys
+
+Josh Wills, Head of Data Engineering at Slack
+Used to work at Cloudera, Google etc.
+Has run Big Data Engineering and Data Science
+Will talk about the relationship between Data Engineering and Data Science and how to improve the relationship
+
+Data Scientists and Data Engineers need to be able to work together and do their individual tasks.
+But both often want fundamentally different things.
+Data Scientists:- Do Analytics, ML, Dashboarding, Reporting, Storytelling etc.
+Data Engineers: Want Scalability (Doesn't matter how you do BUT SCALE FOR GOD SAKE).
+
+Infinite Loop of Sadness
+Data Engineering => Data Science => Business => Ops => Data Engineering
+
+Business makes unreasonable requests from the data science team
+The data science team makes unreasonable requests from data engineering team
+The data engineering teamm makes unreasonable request from Ops team
+The Ops team goes to business people and tells how much money they need for that
+
+There is a need to change the infinite loop of sadness to infinite loop of emphathy.
+
+Everybody ETLs
+Option 1: SQL-Centric ETL: Bad for Data Engineers
+Option 2: JVM-Centric ETL: Bad for Data Scientists
+
+#1 The Rise of Spark
+Spark is taking over most of the things. But does a lot of things okayishly
+#2 Too Many Streaming Engines
+Too many choices. Very litte idea which one is better.
+#3 Streaming Design Patterns
+New pipelines and systems are being designed.
+#4 A Focus on The Real Problem
+Unless you are Facebook/Google/Microsoft/Amazon who open sources data engineering pipelines, you can use their pipelines!
+The real problem is change. The fact that (i) underlying data (ii) Downstream metrics (iii) All the Machine learning models. Everything is changing all the time. 
+How do you change in a scalable way!?
+
+Inspiration from Deep Learning
+-> Most Deep Learning Libraries have low level systems implementation done in C++ / CUDA using GPUs and then a high-level scripting language for doing most of the scripting stuff
+This can be applied in data engineering pipelines too
+This is particularly possible by Spark. We can load few TB of query and come up with it interactively.
+Ability to cache data sets in memory gives a lot more flexibility (relative to MapReduce).
+Javascript => When you need to write scripting or write custom logic
+
+
+Having Product Managers who are data driven is extremely important
