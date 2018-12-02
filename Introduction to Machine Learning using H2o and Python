@@ -1,0 +1,48 @@
+https://www.youtube.com/watch?v=yjqmVHA2cFM&t=519s
+
+H2O is easy to use as one can do advanced stuff using simple API. 
+
+H20 is in-memory, distributed machine learning algorithms giving high speed and accuracy
+
+This tutorial is about H20 Machine Learning platform
+Other products:
+-> Deep Water: On using GPU for Deep Learning
+-> Sparkling Water: Intergration with Spark
+-> Steam: Having deploy a model
+
+H2O is much faster for Big Data with same (or better) performance
+High Performance
+Scalable
+Powerful
+
+H2O
+-> Has connectors to databases including HDFS, S3, NFS, Local, SQL
+
+The Engine Comprises of 4 parts
+-> Part-1: (i) Load Data (ii) Distributed In-Memory (iii) Loss-less compresion
+-> Part-2: (i) Exploratory & Descriptive Analysis (ii) Feature Engineering & Selection
+-> Part-3: (i) Supervised & Unsupervised Modeling (ii) Model Evaluation & Selection
+-> Part-4: (i) Predict (ii) Data & Model Storage
+
+The Output allows the data and model to be exported as plain old java object to the production scoring environment
+
+H20 has a web interface. It has most of the features inlcuding data ingesting, data manipulation, model building and model scoring.
+
+Learning Objectives:
+-> Start and Connect to a local H2o cluster in Python
+-> Import data from Python data frames, local files or web
+-> Perform basic data transformation and exploration
+-> Train regression and classification models
+-> Evaluate models and make predictions
+-> Improve performance by tuning and stacking
+-> Connect to H2O cluster in the cloud
+
+Start and Connect to a local H2o cluster in Python
+https://github.com/woobe/h2o_tutorials/blob/master/introduction_to_machine_learning/py_01_data_in_h2o.ipynb
+-> Do import h2o and then h20.init(nthreads = -1) # -1 will automatically use all the clusters available in your machine
+-> Import CSV file using H2O dataframe
+-> Convert Pandas dataframe to H20 Dataframe
+
+https://github.com/woobe/h2o_tutorials/blob/master/introduction_to_machine_learning/py_02_data_manipulation.ipynb
+-> Can find summary 
+
