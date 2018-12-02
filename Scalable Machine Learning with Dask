@@ -1,0 +1,83 @@
+https://www.youtube.com/watch?v=tQBovBvSDvA
+
+There is more to machine learning than making scikit-learn estimator and passing the data. A lot before and after that
+
+Machine Learning Workflow:
+-> Understanding the problem, objectivse
+-> Reading from data sources
+-> Exploratory analysis
+-> Data Cleaning
+-> Modeling
+-> Deployment and Reporting
+
+Most of the libraries do not scale well.
+Numpy and Pandas are limited to datasets which fits in single memory
+
+Dask scales them to larger problems
+
+High Level Dask: Parallel Pandas, Numpy, Scikit-Learn
+Low Level Dask: Scalable, High Performance task scheduling
+
+Dask like libraries does the responsibility of parallelizing libraries and computation to multiple cores
+
+Dask DataFrame
+import dask.dataframe as dd
+df = dd.read_csv('s3://abc/*.csv')
+df.groupby(df.name).value.mean()
+
+Dask Numpy
+import dask.array as da
+x = da.reandom.random(2)
+y = x.dot(x.T) - x.mean(axis = 0)
+
+Dask builds up a task graph and the compute method is called later on. When the compute method is called, it handles to the scheduler which is responsible to handle in parallel.
+
+-> parallelizes libraries like Numpy, Pandas and Scikit-learn
+-> Adapts to custom algorithms with a flexible task scheduler
+-> Scales from a laptop to thousands of computers
+-> Integrates easily, Pure Python built from standard technology
+
+Scalable Machine Learning
+
+Scaling Pains
+Larger Models or Larger Datasets are the two main pain points in machine learning
+Larger Models and Larger Datasets are relative to the machine or server you have
+
+Scikit-Learn: Fantastic for models and data relative to size of your machine. You can get single node machine with tons of cores
+Distributed Scikit-Learn: Using a cluster to do training (for more complex models NOT larger datasets)
+Use dask to distribute computation on cluster.
+How does RandomForestClassifier training happen in scikit-learn? It is designed to work on a single machine with multiple cores. Formation of each tree is actually independent of each other (post data sampling). So scikit-learn developers have ensure that this becomes fast by using all the cores of single machine
+
+You can scale this using dask to multiple clusters
+
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.externals import joblib
+import dask_ml.joblib
+
+clf = RandomForestClassifier(n_estimators = 200, n_jobs = -1)
+with joblib.parallel_backend("dask", scatter=[X,y]):
+	clf.fit(X,y)
+Now joblib and dask will be talking to each other. 
+Hence fitting tree happens on a cluster (instead of your local machine)
+
+Caveats
+-> Data has to fit in RAM
+-> Data shipped to each worker. (i) Each parallel task should be expensive (ii) There should be many parallel tasks.
+
+But with larger datasets (which do not fit in RAM) what do you do?
+-> Sampling may be OK
+-> Plotting learning curves from scikit-learn
+
+If your learning curve shows that sampling is just fine, but you still want to do large scale processing
+from dask_ml.wrappers import ParallelPostFit
+clf = ParallelPostFit(SVC())
+clf.fit(x_small_dataset, y_small_dataset)
+
+x_large = dd.read_csv('s3://abc/*.parq')
+y_large = clf.predict(x_large)
+This will compute predictions in parallel
+
+Conclusion on Dask and Dask_ML
+-> Parallelizes libraries like Numpy, Pandas and Scikit-Learn
+-> Scales from a laptop to thousands of computers
+-> Familiar API and in-memory computation
