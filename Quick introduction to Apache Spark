@@ -1,0 +1,32 @@
+https://www.youtube.com/watch?v=TgiBvKcGL24
+
+Apache Spark is fast, high performance, distributed cluster computing system.
+
+Unlike Hadoop, Apache Spark is much faster in terms of computation as well as memory usage
+
+General purpose:
+-> Suitable for batch based processing (like Hadoop map reduce)
+-> Real time processing (Apache Storm)
+
+Single unified framework to handle batch based as well as real time.
+
+Apache Spark is intended for large scale processing, if data fits in single large server it wouldn't make sense. It really shines when data is extremely huge.
+
+Apache Spark is built upon Scala. Runs on a JVM. It has high-level APIs in Java, Scala, Python and R.
+Apache Spark comes with
+-> Spark SQL: Allows you to use SQL like constructs to query structured data. The data could be in a csv file, JSON file or SQL like repository
+-> Spark Streaming: Almost real time processing. Uses the concept of micro-batching.
+-> MLlib: Machine Learning library. Excels in memory and underlying implementation for iterative processing
+-> GraphX: Graph Processing
+
+Spark Absractions and Concepts
+-> RDD: Resilient Distributed Dataset: Does most of the handling in terms of the transformation and managing data lineage
+-> DAG: Directed Acyclic Graph: Constructs a graph and forms sequence of computation that needs to be performed on the data
+-> SparkContext: Does lot of orcestrations within a spark cluster
+-> Transformations: When you load data into RDD (which is immutable). For eg if you are supposed to do filter, it creates a new RDD
+-> Actions: Does the process of Lazy Loading. Does not perform any computation/execution of data until its required.
+
+Spark Components
+-> It is a distributed engine.
+-> It uses a Driver Program. When you start Apache Spark in Spark shell, the spark shell becomes a driver program. This is called Spark Context which provide communication and coordination among other cluster
+-> Worker Node: Has an executor, it creates different process within worker node (called executor)
