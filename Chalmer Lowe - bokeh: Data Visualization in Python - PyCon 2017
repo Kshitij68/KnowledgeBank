@@ -1,0 +1,23 @@
+https://www.youtube.com/watch?v=xId9B1BVusA&t=7177s
+
+https://github.com/chalmerlowe/bokeh_tutorial
+
+What Chalmer Lowe does:
+-> Founder: Dark Art of Coding
+-> Founder: PyHawaii
+-> Senior Computer Scientist: Booz Allen Hamilton
+-> Chair / Co-Chair: Pycon Education Summit
+-> Introduction to Sprinting guy
+
+There are two faces of Bokeh
+-> Standalone visualizations viewable in browsers with no use of Bokeh server
+-> These plots have interactive tools and features, such as panning, brushing, hover, etc.
+
+Server-based apps
+-> Environment where data can be updated and manipulated such that it can then update the visualization and where the user interface and selection process can trigger visual updates
+
+How does Bokeh work?
+-> Bokeh is designed such that high-level objects that go into your model are created in Python and converted to JSON format
+-> Bokeh JS uses this to create the visualizations which are rendered in JavaScript to the browser
+-> Limitations: Displaying large quantities of data is limited by the browser and its ability. We will look at using Bokeh server to get around this
+
