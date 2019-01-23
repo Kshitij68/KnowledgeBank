@@ -1,0 +1,46 @@
+https://www.youtube.com/watch?v=irkV4sYExX4
+
+Feature Engineering is the process of transforming inputs so that the machine learning algorithm can use it for predictions
+
+Typical Enterprise Machine Learning Workflow
+-> Data Integration
+-> Data Quality and Transformation
+-> Modeling 
+-> Building Model
+
+Feature Engineering Cycle
+Dataset => Hypothesis set => Validate Hypothesis => Apply Hypothesis => Dataset
+
+Hypothesis set. How?
+-> Domain Knowledge
+-> Prior Experience
+-> EDA
+-> ML model feedback
+
+Validate Hypothesis. How?
+-> Cross Validation
+-> Measurement of desired metrics
+-> Avoid Leakage
+
+Why is Feature Engineering Hard?
+-> Transformations can lead to leakage when applied wrongly
+-> Usually requires some domain knowledge on how features interact with each other
+-> Time-consuming. Need to run thousands of experiments
+
+Feature Engineering
+-> Extract more new gold features, remove irrelevant noisy features (Simpler models are often better)
+-> Key Elements: (i) Target Transformation (ii) Feature Encoding (iii) Feature Extraction
+
+Target Transformation
+-> Use it when variable shows a skewed distribution make the residuals more close to normal distribution (Using log / exponential transformations)
+
+Feature Encoding
+-> Turn categorical features into numeric features to provide more fine-grained information
+-> Help explicitly capture non-linear relationships and interactions between the values of features
+-> Most machine learning tools accept numbers as the input
+Label Encoding
+-> Interpret the categories as ordered integers (like Scikit-Learn: LabelEncoder)
+Frequency Encoding
+-> Encode categorical levels of features to values between 0 and 1 based on their relative frequency
+Target Mean Encoding
+-> Encode each feature as mean of response
