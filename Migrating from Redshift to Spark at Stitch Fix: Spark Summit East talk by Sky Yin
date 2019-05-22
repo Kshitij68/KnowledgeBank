@@ -1,0 +1,36 @@
+https://www.youtube.com/watch?time_continue=14&v=XI09DqmRImo
+
+Recommend clothes through a combination of human stylists and algorithms
+
+Biggest table adds 500-800M rows per day (over two years)
+Data science jobs are mostly done in Python or R, and later deployed through Docker
+
+As business grows, RedShift was brought in to help extract relevant data
+
+Redshift: the good parts
+-> Can be very fast
+-> Familiar interface: SQL
+-> Managed by AWS
+-> Can scale up and down on demand
+-> Cost effective
+
+RedShift: Troubles
+-> Congestion: Too many people running queries in the morning (~80 people in data team)
+-> Production pipelines and exploratory queries share the same cluster
+    -> Yet another cluster to isolate prod and dev?
+        -> You need to sync the two clusters
+        -> Will hit scalability problem again
+-> There is no isolation between computation and storage
+    -> Can't scale computation without paying for storage
+    -> Can't scale storage without paying for unneeded CPUs
+
+Data Infrastructure: storage
+-> Single source of truthL S3, not RedShift
+-> Compatible Interface: Hive metastore
+
+Journey to Spark: SQL
+-> Heave on SparkSQL with a mix of PySpark
+-> Lower migration cost and gentle learning curve
+-> Data storage layout is transparent to users
+    -> Overcome eventual consistency problem
+    -> Every write we create a new folder with timestamp as batch_id, to avoid consistency problem in S3

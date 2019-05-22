@@ -1,0 +1,14 @@
+https://www.youtube.com/watch?v=UEg40Te8pnE
+
+Data integration is quite messy
+It has become more difficult as things have started to become complex
+
+Integration Complexity
+-> No system of record
+-> Synchronization is hard
+-> Scaling ETL is hard
+-> Processing is error-prone
+
+First thing that we do for integration architecture is to use events instead of tables (as source of truth)
+
+We need to be able to go back in time. For this a ledger like system must be present

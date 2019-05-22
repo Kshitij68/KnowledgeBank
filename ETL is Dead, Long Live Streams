@@ -1,0 +1,34 @@
+https://www.youtube.com/watch?v=I32hmY4diFY
+
+Data and data systems have really changed in the past decade
+
+Old World: Two popular locations for data
+Operational Databases and Relational data warehouse
+
+Major Trends:
+    (i) Single server databases are replaced by a myriad of distributed data platforms that operate at company wide scale
+    (ii) Many more types of data sources beyond transactional data-logs, sensors, metrics etc.
+    (iii) Stream data is increasingly ubiquitous, need for faster processing than daily
+    (iv) The end result? The data pipelines have become increasingly complex
+
+We will see how transitioning to streams cleans up the mess and works towards a more structured, scalable and manageable approach
+
+A short history of data integration
+
+ETL tools:-
+    (i) The need for global schema
+    (ii) Data cleansing and curation is manually and fundamentally error-prine
+    (iii) Operational Cost of ETL is high; it is slow, time and resource intensive
+    (iv) ETL tools were built to narrowly focus on connecting databases and the data warehouse in a batch fashion
+
+Early take on real-time ETL = Enterprise Application Integration (EAI)
+Enterprise Application Integration (EAI)
+    - EAI employed enterprise service buses and MQs; weren't scalable
+
+ETL and EAI are outdated
+    - EAI: Real time but not scalable
+    - ETL: Scalable but batch
+
+Complete Revamp is required to create a technology that suits the modern technology world. Their are new set of requirements:-
+    - Ability to process high-volume and high-diversity data
+    - Real-time from the grounds up; a fundamental transition to event-centric thinking

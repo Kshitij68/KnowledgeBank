@@ -1,0 +1,27 @@
+https://www.youtube.com/watch?v=B_HTdrTgGNs
+
+Why Cassandra (or any non-relational database)?
+-> Huge amounts of data
+-> Traditional Solutions: (i) Oracle MySQL (ii) Microsoft SQL Server are not best fit
+-> Big Table (2006) - Google
+-> Dynamo Paper (2007) - Amazon
+-> Cassandra (2008) - Distributed of Dynamo and data model of Big Table
+
+Cassandra - More than one server
+-> All nodes participate in a cluster
+-> Shared nothing
+-> Add or remove as needed
+-> More capacity? Add a server
+
+Cassandra - Fully replicated
+-> Client writes local
+-> Data syncs across WAN
+-> Replication Factor per DC
+
+Cassandra - Writes on a single node
+-> Update in Cassandra is called Mutation
+-> When the data arrives to server, it writes in a commit log
+-> When data goes in commit log, it puts in mem table (identified by primary key). Mem table represents row of data
+-> Acknowledge to the client on the process being completed.
+-> As mem tables start to fill up, there is a flush process
+->

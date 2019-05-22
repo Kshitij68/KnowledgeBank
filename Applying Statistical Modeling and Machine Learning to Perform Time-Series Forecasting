@@ -1,0 +1,17 @@
+https://www.youtube.com/watch?v=JntA9XaTebs
+
+Things to learn in the tutorial
+-> Why time-series data is different
+-> How to process time-series data
+-> How to better understand time-series data
+-> How to apply statistical and machine learning methods to time-series problems
+-> Understand some strengths and weaknesses of these models
+-> How to evaluate, interpret, and convey output from forecasting models
+
+Data Due Diligence
+-> What question do I want to answer?
+-> Do I need time-series data to answer this question?
+-> Is the data clean or dirty Is additional processing necessary?
+-> Where do I store my data? How do I access my data?
+-> How do we load the data into a place where we can access it?
+
