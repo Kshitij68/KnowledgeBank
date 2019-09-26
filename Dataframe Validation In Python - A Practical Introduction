@@ -1,0 +1,34 @@
+https://www.youtube.com/watch?v=1fHGXOfiDO0
+
+When we work in sandbox/development environment, usually things go pretty smoothly
+The problems usually start when model faces with real data in production
+
+Why do we need data validation?
+-> We should validate the data the same way we validate the code
+
+Data Quality Dimensions
+-> Valid: Proper syntax and format
+-> Accurate: Supposed to be representative of real world
+-> Complete
+-> Consistent
+-> Uniform
+-> Unique
+
+Four Scenarios can happen on going for production
+-> Perfect World:  Everything works as planned. Yay!
+-> Model Deterioration: In few days / weeks, there is deterioration in the model performance
+-> Accidental Discovery: We have problem with underlying data, which model doesn't indicate as wrong.
+                        It takes someone with domain expertise to identify that.
+-> Ignorance is bliss: Model is giving wrong predictions even though we do not know that
+
+Tool 1: voluptous
+Tool 2: Engarde
+
+
+TDDA: Test Driven Data Analysis
+Applying TDDA principals to data analysis
+Benefits:-
+-> Correctness
+-> Regression Detection
+-> Refactoring
+-> Portability
