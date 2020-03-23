@@ -1,0 +1,142 @@
+https://www.youtube.com/watch?v=EjezAA7YYys
+
+To bring OpenAPI spec in documentation track is kinda false advertising, because OpenAPI is excellent way to do API documentation.
+BUTTT, you can do a lot more!
+
+Describing APIs
+-> Describe RESTful HTTP APIs in a machine readable way
+-> API description is independent of outputs such as documentation
+-> Enable things that are not "just" documentation
+
+If you are going to write API docs, instead you can describe the API, generate the docs and use that description for bunch of other things
+
+Seperate the content and the way that the content is presented
+
+From OpenAPI specification, you can generate long form, very detailed format (even in web-based or printable format)
+
+People can take the description and use for whatever they need
+
+You can generate mock services, tests, client SDK, libraries. ALL from the description of the API
+
+It is not about technology
+
+It enables people to collaborate on the API design before we build the API
+
+It does not let the developer lose
+
+Using the spec, the business user, product user all can be part of looking at the API and understanding it
+
+Engineers can generate mock server. I can import to postman and have a look how it will be, how the parameters will be used
+I can instantly start to poke at this thing
+
+
+- Write OpenAPI specification
+- Collaborate with business users
+- Cuts down the process of redoing stuff
+
+
+About OpenAPI Spec
+-> API description language formerly known as "Swagger"
+-> Became "OpenAPI Spec" -> v3 released
+
+Should I add OpenAPI to new project or should I add to existing project?
+-> Both can be done
+
+
+Who write OpenAPI Specs
+-> Product Owner (Invaluable)
+-> Engineer
+-> Writer
+
+They won't love YAMAL, but they will have real insight in the API
+Which lookup, what formats to use
+
+Anatomy of OpenAPI Spec
+
+Top Level Elements
+-> OpenAPI: Version that we are following
+-> Info: Information on the fields of the APIs
+-> Servers: Array of Endpoints
+-> Paths: What you think of as API documentation. It is a list of endpoints, what methods are going to be, what parameters are going to be
+-> Components: Big Bucket of all the things you might need
+-> Security: Which component came to use
+-> Tags: Free form labels, allow you to group similar endpoints together. Some of the documentation renders which will show them in sections.
+         If you have a large API which has lot of endpoints, tags can be really useful (and recommended)
+
+OpenAPI Spec Examples
+-> Can be JSON vs YAMAL
+```
+openapi: 3.0.0
+servers:
+    - url: 'https://api.nexmo.com/ni'
+info:
+     title: Number Insight API
+     version: 1.1.0
+     description: >
+        Nexmo's Number Insight API delivers real-time intelligence about the values
+....
+````
+-> These things are verbose
+-> They are unwieldy. Dealing with hundreds of lines of YAMAL
+
+Documenting the Endpoint
+```
+paths:
+    '/basic/{format}':
+        parameters:
+            - $ref: '#/components/parameters/format'
+        get:
+            operationId: getNumberInsightBasic
+            parameters:
+                - $ref: '#/components/parameters/number'
+                - $ref: '#/components/parameters/country'
+            responses:
+                '200':
+                    description: OK
+                    content:
+                        application/json
+                            schema:
+                                $ref: '#/components/schemas/niResponseJsonBasic'
+
+```
+We make a call to /basic/{format} -> format - I just refer to it
+If I want to change, I change it in a single
+
+Example Parameter
+number:
+    name: number
+    in: query
+    description: 'A single phone number that you need insight about in national or...'
+    example: '12982392392'
+    required: true
+    schema:
+        type: string
+        pattern: '^[0-9-+\(\)\s]*$'
+
+
+Tips
+    -> Please use Source Control
+    Editing Tool
+        -> Atom https://atom.io
+        -> SwaggerUI, SwaggerHub, etc https://swagger.io/tools/
+        -> API Curio Studio gets good reviews https://www.apicur.io/
+        -> Stoplight looks interesting: https://stoplight.io/
+    Validation Tool
+        -> Speccy is a CLI tool with configurable rules https//speccy.io/
+        -> Open API Spec Validator: https:/github.com/p1c2u/openapi-spec-validator
+        Set up your editor or use a watch command e.g.
+        `watch -n 1 speccy lint myspec.yml`
+    Preview Tools
+        OAS is a standard! So any preview should do:
+            -> ReDoc is great https://github.come/Rebilly/ReDoc
+            -> Speccy also wraps ReDoc for its serve command
+            -> You can run OPenAPI-GUI locally
+                https://github.com/mermade/openapi-gui
+
+Resources
+    -> https://www.openapis.org
+    -> https://apievangelist.com
+    -> https://speccy.io
+    -> https://github.com/Rebilly/ReDoc
+    -> https://openapi.tools
+    -> https://github.come/openapitools/openapi-generator

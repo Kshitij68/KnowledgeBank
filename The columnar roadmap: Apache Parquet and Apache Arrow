@@ -1,0 +1,82 @@
+https://www.youtube.com/watch?v=dPb2ZXnt2_U
+
+Apache Parquet and Apache Arrow
+
+Agenda
+-> Community Driven Standards
+-> Benefits of Columnar Representation
+-> Vertical Integration: Parquet and Arrow
+-> Arrow based Communication
+
+Community Driven Standards
+-> An open source standard
+    -> Parquet: Common need for on disk columnar
+    -> Arrow: Common need for in memory columnar
+    -> Arrow is building on the success of Parquet
+    -> Top level Apache Project
+    -> Standard from the start
+        -> Members from 13+ major open source projects involved
+    -> Benefits
+        -> Share the effort
+        -> Create an ecosystem
+
+Interoperability and Ecosystem
+    -> Before
+        -> Interaction between `Spark`, `Pandas`, `Drill`, `Impala`
+        -> Each system has its own internal memory format
+        -> 70-80% CPU wasted on serialization and deserialization
+        -> Functionality duplication and unnecessary conversions
+    -> With Arrow
+        -> All systems utilize the same memory format
+        -> No overhead for cross system communication
+        -> Projects can share functionality (e.g. Parquet-to-Arrow Reader)
+
+Benefits of Columnar Representation (over Row oriented)
+
+    Logical Table Representation
+
+        a       b       c
+        a1      b1      c1
+        a2      b2      c2
+        a3      b3      c3
+        a4      b4      c4
+        a5      b5      c5
+
+    Row Layout
+
+    a1  b1  c1  a2  b2  c2  a3  b3  c3  a4  b4  c4  a5  b5  c5
+
+
+    Column Layout
+
+    a1  a2  a3  a4  a5  b1  b2  b3  b4  b5  c1  c2  c3  c4  c5
+    <--encoded chunk--><---encoded chunk--><--encoded chunk-->
+
+    Benefits
+        -> You can encode bunch of values at the same time together. Much more
+            efficient and smarter encoding
+        -> Compression works better (one is homogeneous) (all data types are same, easier to put constraints)
+        -> When accessing data, you can skip columns that do not need to be accessed
+
+On Disk and in Memory
+    -> Different trade offs
+        -> On disk: Storage
+            -> Accessed by multiple queries
+            -> Priority to I/O reduction (but still needs good CPU throughput)
+            -> Mostly streaming access
+        -> In MemoryL Transient
+            -> Specific to one query execution
+            -> Priority to CPU throughput (but still needs good I/O)
+            -> Streaming and Random Access
+
+Parquet on Disk Columnar Format
+    -> Nested Data Strucutres
+    -> Compact Format
+        -> Type Aware Encodings
+        -> Better Compression
+    -> Optimized I/O
+        -> Projection Push Down (column pruning)
+        -> Predicate Push Down (filters based on stats)
+
+Parquet Nested Representation
+    -> Borrowed from Google Dremel Paper
