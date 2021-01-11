@@ -1,0 +1,112 @@
+https://www.youtube.com/watch?v=1xo-0gCVhTU
+
+Microservices, Docker and Kubernetes
+
+Microservices
+    - Instead of having big monolithic application, you split it up to several processes.
+    - A very specifc thing for each application
+    - Communicate via well defined APIs - usually HTTP
+
+
+Monolithic Architecture
+    - User Interface
+    - Business Logic
+    - Data Access Layer (interacts with DB)
+
+Microservices Architecture
+    - User Interface
+    - Multiple Microservices triggered by the user interface
+    - Each microservice does small specifc jobs
+
+Microservices Advantages
+    - Lanugage Independent
+        - one can be written in Java, other Python etc..)
+    - Fast Iterations
+        - Split up each microservice in it's own team
+        - In a monolithic Architecture, you end up having 20 people working in big project. It is big and clunky and it gets complex
+    - Small Teams
+        - Each team will be responsible for that specifc microservice and what it does
+    - Fault Isolation
+        - If one microservice fails, then it does not mean that entire application fails
+    - Pair well with Containers
+    - Scalable
+        - Big Plus
+
+Microservices Disadvantages
+    - Complex Networking
+    - Overhead
+        - Databases
+        - Servers
+
+
+
+
+
+Docker
+An open platform for developers and sysadmins to build, ship and 
+run distributed applications, whether on laptops, data center VMs, 
+or the cloud
+Docker does not have the OS
+Docker does not take lot of space on hard-drive
+
+DockerFile
+- Describes the build process for an image
+- Can be run to automatically create an image
+- Contains all the commands necessary to build the image and run your application
+
+Why is Docker Important?
+- 65% of orgs have challenges maintainig legacy applications
+- 44% of orgs are adopting Microservices
+- 39% of orgs are modernizing existing applications
+
+Container Orchestration
+- Deploying and Scaling Containers
+- Different types of container Orchestraters:-
+    - Azure Container Service
+    - Amazon ECS
+    - Marathon
+    - Kubernetes
+    - Google Container Engine
+
+Kubernetes
+- An open source system for automating deployment, scaling and management of
+  containerized applications
+- Takes a declared state on how you like to configure your microservice, and it makes it happen
+- Let us say I am running services in Amazon EC2, I boot up couple of instances.
+  I want to run the applications on them. I could individually go, ssh into each one, clone my application
+  build it run it, if it crashed,then do again. 
+  Or I could do with Kubernetes.
+
+Kubernetes Vocab
+- Node (Instance of a computer)
+    - Kublet
+    - Communicates with master
+    - Runs pods
+- Pod
+    - Runs (1+ containers)
+    - Exists on a Node
+- Service
+    - Handles requests (either inside the cluster or from outside the cluster)
+    - Usually a load balancer
+    - How requests should be routed and handled within the cluster
+- Deployment
+    - Defines desired state - Kubernetes handles the requests
+
+Quick Recap
+Master (Has Replication Controller)
+    - Node/Kublet
+        - Pod
+            - Container
+
+Deployment YAML
+- Will be deployment file for nginx
+- If you want 3 copies of nginx, you can do via yaml files
+- You can mention any type of services
+- Feature: Automatic rebootting of pods, if something crashes
+- Feature: Rolling updates, if I have verion 1, and I want to roll out version 2 (with minimum down-time)
+  From a client perspective, their is not downtime.
+
+Using docker, you can use the same image to run multiple hosts
+- docker run -d -p 3000:80 tutum/hello-world
+- You can change the port from 3000 to 3001 and seperate instance will be created
+
