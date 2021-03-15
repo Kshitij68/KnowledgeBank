@@ -8,7 +8,7 @@ Repository with notes on variety of ML talks
 - [Scaling Knowledge: A Look at Airbnb Data Science Team](https://www.youtube.com/watch?v=6QVXPNrSbLU) : Martin Daniel, Data Scientist at Airbnb discussed Airbnb's emphasis on (i) Analysis (ii) Experimentation (iii) Data Products
 - [Why we built ElasticSearch](https://www.youtube.com/watch?v=fEsmydn747c) : Talk by the creator of ElasticSearch on how it is more scalable
 
-#TODO:
-- Complete the Intro to Neo4J 
-- Complete TutorialsPointhttps://www.youtube.com/watch?v=6QVXPNrSbLU
-- Complete From Data Science to Production - Deploy, Scale, Enjoy
+
+## Directories and Talks
+
+#### Apache Spark
