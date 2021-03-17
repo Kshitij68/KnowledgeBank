@@ -7,4 +7,18 @@ Stores retrieves and manages document oriented and semi-strucutred data
 
 Why ElasticSearch?
 - Product Information Retrieval often takes too long
+- Lag in search attributed to the relational database used for the product design, where data is scattered among multiple tables
+
+Data Ingestion
+- Parsed
+- Normalized
+- Enriched
+
+How does ElasticSearch work?
+- Users can run complex queries against their data and use aggregations to retrieve complex summaries
+
+Cluster
+- One or more servers that together stores the data
+
+Near Real Time (NRT)
 - 
