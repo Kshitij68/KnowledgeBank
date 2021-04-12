@@ -12,8 +12,9 @@ Repository with notes on variety of ML talks
 ## Directories and Talks
 
 #### Apache Spark
+- Migrating from Redshift to Spark
 
-
+#### Udemy
 #### ElasticSearch
 - [Why we built ElasticSearch](https://www.youtube.com/watch?v=fEsmydn747c)
 - [High Level ElasticSearch Tutorials for Beginners](https://www.youtube.com/watch?v=C3tlMqaNSaI&ab_channel=Udemy)

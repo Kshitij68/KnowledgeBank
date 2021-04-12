@@ -25,7 +25,7 @@ RedShift: Troubles
     -> Can't scale storage without paying for unneeded CPUs
 
 Data Infrastructure: storage
--> Single source of truthL S3, not RedShift
+-> Single source of truth S3, not RedShift
 -> Compatible Interface: Hive metastore
 
 Journey to Spark: SQL
