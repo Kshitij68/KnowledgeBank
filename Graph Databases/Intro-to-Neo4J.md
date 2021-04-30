@@ -4,15 +4,14 @@ Often, graph data models is a much more natural way of representing data
 
 Relational Database provided ACID transition capabilities
 ACID: Atomicity, Consistency, Isolation, Durability
-These are properties intended to guarentee validity even in the event of errors, power failures etc. 
-Atomicity: Guarentee that each transaction is treated as a single unit which either succeeds or completely fails. The database remains unchanged if the transaction failed
-Consistency: 
-Read again https://en.wikipedia.org/wiki/ACID_(computer_science)
+These are properties intended to guarantee validity even in the event of errors, power failures etc.
+Atomicity: Guarantee that each transaction is treated as a single unit which either succeeds or completely fails. The database remains unchanged if the transaction failed
+Consistency: All data written must be valid by all rules, constraints
+Isolation: Concurrent Transactions leave DB in same state that would have been if they were executed in some "order"
+Durability: Data once committed, will stay even in case of system failure
 
-Adding ACID guarentees lowers the performance
-So we add index
-
-But these do not help in capturing the relationship between data
+ACID guarantee lowers the performance, so we add index
+But these do not help in capturing relationship between data
 
 Neo4J helps often in being the single source of truth. Neo4J supports ACID transaction.
 Neo4J usecases
@@ -28,11 +27,11 @@ To normalize the database, we create primary and secondary keys.But this leads t
 This leads to a situation where we have to trade-off between computation time vs storage 
 
 Neo4J offers three properties
-(i) Intuitivness: Much more intuitive as one can connect with real world scenarios much easily
+(i) Intuitiveness: Much more intuitive as one can connect with real world scenarios much easily
 (ii) Speed: Much faster to understand and run queries on the data
 (iii) Agility: Much more agile. It's quite easy to add/remove the data
 
--> Property: properties corrosponding to a particular node/relationship
+-> Property: properties corresponding to a particular node/relationship
 -> Relationship: relationship between two nodes
 
 How do you use Neo4J?

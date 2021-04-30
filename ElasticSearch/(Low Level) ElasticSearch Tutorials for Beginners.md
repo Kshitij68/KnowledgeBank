@@ -9,14 +9,17 @@ Why ElasticSearch?
 - Product Information Retrieval often takes too long
 - Lag in search attributed to the relational database used for the product design, where data is scattered among multiple tables
 
-Data Ingestion
-- Parsed
-- Normalized
-- Enriched
+What is ES used for?
+- Application Search
+- Website Search
+- Logging and Log Analytics
+- Geospatial Data Analysis and Visualization
+- Business Analytics
 
 How does ElasticSearch work?
 - Users can run complex queries against their data and use aggregations to retrieve complex summaries
 
+Base4
 Cluster
 - One or more servers that together stores the data
 
